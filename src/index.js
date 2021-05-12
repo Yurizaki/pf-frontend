@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-import './index.css';
+import reportWebVitals from "./reportWebVitals";
 
-import AppFrame from './app-frame/AppFrame';
-import reportWebVitals from './reportWebVitals';
+import SPA from "./single-page-app/app-frame/AppFrame";
+import SIA from "./sia/Sia";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppFrame />
-  </React.StrictMode>,
-
-  document.getElementById('root')
+	<React.StrictMode>
+		<BrowserRouter>
+			<Switch>
+				<Route exact path="/sia" component={SIA}></Route>
+				<Route path="/" component={SPA}></Route>
+			</Switch>
+		</BrowserRouter>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 reportWebVitals();
