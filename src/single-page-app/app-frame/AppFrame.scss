@@ -11,6 +11,7 @@ $hover_text_color: #f5f5f5;
 html {
 	background-color: $primary_back_color;
 	color: $primary_text_color;
+    overflow: hidden;
 }
 
 body {

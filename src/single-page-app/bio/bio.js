@@ -15,7 +15,7 @@ class Bio extends Component {
     render() {
         return (
             <section>
-                <section class="hero is-primary">
+                <section class="hero is-link">
                     <div class="hero-body">
                         <h1 class="title">{title}</h1>
                         <h2 class="subtitle">{subtitle}</h2>
@@ -28,7 +28,7 @@ class Bio extends Component {
                             <img class="is-rounded" src={profile_pic} alt='Profile Pic'/>
                         </figure>
                     </div>
-                    <div className='column'>
+                    <div className='column content is-medium'>
                         <p>{para1}</p>
                     </div>
                 </div>
