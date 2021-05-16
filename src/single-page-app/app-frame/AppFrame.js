@@ -18,6 +18,17 @@ class AppFrame extends Component {
 						<Navigation />
 					</div>
 				</div>
+
+				<footer className="footer page-footer">
+					<div className="content has-text-centered">
+						<p>
+							Created by <a href='/contact'>Alex Holmes</a>.
+							Made using <a href='https://reactjs.org/'>React</a>.
+							Stylized with <a href='https://bulma.io/'>Bulma</a>.
+							Hosted on <a href='https://heroku.com'>Heroku</a>.
+						</p>
+					</div>
+				</footer>
 			</section>
 		);
 	}
