@@ -3,13 +3,14 @@ import { Route, Link, BrowserRouter, NavLink } from "react-router-dom";
 
 import Contact from '../contact/contact';
 import Bio from '../bio/bio';
+import Projects from '../projects/Projects';
 
 import "./Navigation.css";
 
 class Navigation extends Component {
 	render() {
 		return (
-			<section>
+			<section className='box'>
 					<div className="columns navigation">
 						<div className="column is-one-fifth-tablet">
 							<div className='menu'>
@@ -18,9 +19,6 @@ class Navigation extends Component {
 							<ul className="menu-list ">
 								<li>
 									<NavLink exact to="/"><p className=''>Home</p></NavLink>
-								</li>
-								<li>
-									<NavLink exact to="/hobbies">Hobbies</NavLink>
 								</li>
 								<li>
 									<NavLink exact to="/blog">Blog</NavLink>
@@ -37,6 +35,7 @@ class Navigation extends Component {
 						<div className="column">
 							<Route exact path='/' component={Bio} />
 							<Route exact path='/contact' component={Contact} />
+							<Route exact path='/projects' component={Projects} />
 						</div>
 					</div>
 			</section>

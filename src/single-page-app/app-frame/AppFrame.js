@@ -8,12 +8,7 @@ class AppFrame extends Component {
 	render() {
 		return (
 			<section>
-				<div className='columns'>
-					<div className='column'>
-						<p className='center'></p>
-					</div>
-				</div>
-				<div className='columns'>
+				<div className='columns make-footer-sticky'>
 					<div className='column'>
 						<Navigation />
 					</div>
