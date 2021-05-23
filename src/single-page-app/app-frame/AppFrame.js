@@ -13,15 +13,13 @@ class AppFrame extends Component {
 			footerData: null,
 			projectData: null,
 			isLoading: true,
-			data: "noo",
 		};
 	}
 
 	componentDidMount() {
 		if (this.state.isLoading) {
-			let url = process.env.REACT_APP_ELEGANT_CMS_URL;
+			let url = process.env.REACT_APP_ELEGANT_CMS_URL + '?sort=updated_at';
 			let token = process.env.REACT_APP_ELEGANT_CMS_TOKEN;
-			let filter = "?filter[uuid][]=fba34e9f-aa4a-40ee-bbaf-f1daf1271243";
 
 			let method = "get";
 			let headers = new Headers({
@@ -34,37 +32,51 @@ class AppFrame extends Component {
 
 					let footerData = '';
 					let projectData = [];
+					let projectTags = [];
+					let headerData = [];
+
 					for(let i = 0; i < json.data.length; i++) {
 						let content = json.data[i];
+
 						if(content.attributes.title === 'profile_website_footer') {
 							footerData = content.attributes.fields;
 						}
 
-						if(content.attributes.title.includes('project')) {
+						if(content.attributes.title.includes('_project')) {
 							projectData.push(content.attributes.fields);
+							content.attributes.fields.hide = false;
+
+							if(!projectTags.includes(content.attributes.fields.tag)) {
+								projectTags.push({'displayName': content.attributes.fields.tag, 'displayStyle': content.attributes.fields.style});
+							}
 						}
 
-						console.log(projectData);
+						if(content.attributes.title.includes('_header')) {
+							headerData.push(content.attributes.fields);
+						}
 					}
+
 					this.setState({
 						isLoading: false,
 						data: "json.data",
 						cmsData: json.data,
 						footerData: footerData,
-						projectData: projectData
+						projectData: projectData,
+						projectTags: projectTags,
+						headerData: headerData,
 					});
 				});
 		}
 	}
 
 	render() {
-		const { data, footerData, projectData } = this.state;
+		const { footerData, projectData, projectTags, headerData } = this.state;
 
 		return (
 			<section>
 				<div className="columns make-footer-sticky">
 					<div className="column">
-						<Navigation projectData={projectData} />
+						<Navigation projectData={projectData} projectTags={projectTags} headerData={headerData} />
 					</div>
 				</div>
 

@@ -1,30 +1,32 @@
 import { React, Component } from "react";
-import { Route, Link, BrowserRouter, NavLink } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
 
-import Contact from '../../pages/contact/contact';
-import Bio from '../../pages/bio/bio';
-import Projects from '../../pages/projects/Projects';
-// import Quotes from '../quotes/Quotes';
+import Contact from "../../pages/contact/contact";
+import Bio from "../../pages/bio/bio";
+import Projects from "../../pages/projects/Projects";
 
 import "./Navigation.css";
 
 class Navigation extends Component {
 	componentDidUpdate(prevProps, prevState) {
-		console.log(this.props);
 		if (this.props !== prevProps) {
 			this.setState({
-				projectData: this.props.projectData
+				projectData: this.props.projectData,
+				projectTags: this.props.projectTags,
+				headerData: this.props.headerData,
 			});
 		}
 	}
 
 	render() {
-		let projectData = '';
-		if(this.state) {
+		let projectData = "";
+		let projectTags = "";
+		let headerData = "";
+		if (this.state) {
 			projectData = this.state.projectData;
+			projectTags = this.state.projectTags;
+			headerData = this.state.headerData;
 		}
-
-		console.log(projectData);
 
 		return (
 			<section className="box">
@@ -49,9 +51,6 @@ class Navigation extends Component {
 									Projects
 								</NavLink>
 							</li>
-							{/* <li>
-									<NavLink exact to="/quotes">Quotes</NavLink>
-								</li> */}
 							<li>
 								<NavLink exact to="/contact">
 									Contact
@@ -65,14 +64,25 @@ class Navigation extends Component {
 							exact
 							path="/projects"
 							render={() => (
-								<Projects projectData={projectData} />
+								<Projects
+									projectData={projectData}
+									projectTags={projectTags}
+									headerData={headerData}
+								/>
 							)}
 						/>
 
-						<Route exact path="/" component={Bio} />
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<Bio
+									headerData={headerData}
+								/>
+							)}
+						/>
+
 						<Route exact path="/contact" component={Contact} />
-						{/* <Route exact path="/projects" component={Projects} /> */}
-						{/* <Route exact path='/quotes' component={Quotes} /> */}
 					</div>
 				</div>
 			</section>
