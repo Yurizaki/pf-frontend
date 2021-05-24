@@ -34,6 +34,7 @@ class AppFrame extends Component {
 					let projectData = [];
 					let projectTags = [];
 					let headerData = [];
+					let bioData = [];
 
 					for(let i = 0; i < json.data.length; i++) {
 						let content = json.data[i];
@@ -54,6 +55,10 @@ class AppFrame extends Component {
 						if(content.attributes.title.includes('_header')) {
 							headerData.push(content.attributes.fields);
 						}
+
+						if(content.attributes.title.includes('bio')) {
+							bioData.push(content.attributes.fields);
+						}
 					}
 
 					this.setState({
@@ -64,19 +69,20 @@ class AppFrame extends Component {
 						projectData: projectData,
 						projectTags: projectTags,
 						headerData: headerData,
+						bioData: bioData,
 					});
 				});
 		}
 	}
 
 	render() {
-		const { footerData, projectData, projectTags, headerData } = this.state;
+		const { footerData, projectData, projectTags, headerData, bioData } = this.state;
 
 		return (
 			<section>
 				<div className="columns make-footer-sticky">
 					<div className="column">
-						<Navigation projectData={projectData} projectTags={projectTags} headerData={headerData} />
+						<Navigation projectData={projectData} projectTags={projectTags} headerData={headerData} bioData={bioData} />
 					</div>
 				</div>
 

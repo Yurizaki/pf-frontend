@@ -26,17 +26,6 @@ class Contact extends Component {
 
 				<div class="card">
 					<div class="card-content">
-						<div class="media">
-							<div class="media-left">
-								<figure class="image is-48x48">
-									<img src={profile_pic} alt="Profile pic" />
-								</figure>
-							</div>
-							<div class="media-content">
-								<p class="title is-4">{name}</p>
-							</div>
-						</div>
-
 						<div class="content">
 							<p>For more info on myself.</p>
 							<ul>

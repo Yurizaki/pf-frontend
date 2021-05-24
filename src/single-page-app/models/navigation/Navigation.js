@@ -14,6 +14,7 @@ class Navigation extends Component {
 				projectData: this.props.projectData,
 				projectTags: this.props.projectTags,
 				headerData: this.props.headerData,
+				bioData: this.props.bioData,
 			});
 		}
 	}
@@ -22,10 +23,12 @@ class Navigation extends Component {
 		let projectData = "";
 		let projectTags = "";
 		let headerData = "";
+		let bioData = "";
 		if (this.state) {
 			projectData = this.state.projectData;
 			projectTags = this.state.projectTags;
 			headerData = this.state.headerData;
+			bioData = this.state.bioData;
 		}
 
 		return (
@@ -78,6 +81,7 @@ class Navigation extends Component {
 							render={() => (
 								<Bio
 									headerData={headerData}
+									bioData={bioData}
 								/>
 							)}
 						/>

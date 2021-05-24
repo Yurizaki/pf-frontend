@@ -103,14 +103,13 @@ class Projects extends Component {
 							{ALL_PROJECTS}
 						</button>
 						{projectTags.length > 0 &&
-							projectTags.map((projectTags) => (
-								<button
-									class={'button ' + projectTags.displayStyle}
-									onClick={this.onSelect}
-								>
-									{projectTags.displayName}
+							projectTags.map(
+								(tag) => (
+								<button class={'button ' + tag.displayStyle} onClick={this.onSelect}>
+									{tag.displayName}
 								</button>
-							))}
+							))
+						}
 					</div>
 					<div class='tile is-ancestor'>
 						<div class='tile is-vertical is-12'>
@@ -118,25 +117,12 @@ class Projects extends Component {
 								<div class='tile is-parent is-vertical'>
 									{projectData.length > 0 &&
 										projectData.map(
-											(projectData) =>
-												!projectData.hide && (
-													<article
-														class={
-															'tile is-child notification ' +
-															projectData.style
-														}
-													>
-														<p class='title'>
-															{projectData.header}
-														</p>
-														<p class='subtitle'>
-															{
-																projectData.summary
-															}
-														</p>
-														<p class='content'>
-															{/* {content1} */}
-														</p>
+											(project) =>
+												!project.hide && (
+													<article class={'tile is-child notification ' + project.style}>
+														<p class='title'>{project.header}</p>
+														<p class='subtitle'>{project.summary}</p>
+														<p class='content'>{project.content}</p>
 													</article>
 												)
 										)}
