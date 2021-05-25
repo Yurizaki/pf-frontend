@@ -17,8 +17,8 @@ class Quotes extends Component {
 			<section>
 				<section class="hero is-link">
                     <div class="hero-body">
-                        <h1 class="title">{title}</h1>
-                        <h2 class="subtitle">{subtitle}</h2>
+                        <h1 class="title darkMode_text">{title}</h1>
+                        <h2 class="subtitle darkMode_text">{subtitle}</h2>
                     </div>
                 </section>
 
@@ -28,12 +28,12 @@ class Quotes extends Component {
 							<div class="tile">
 								<div class="tile is-parent is-vertical">
 									<article class="tile is-child notification is-primary">
-										<p class="title">{quote1}</p>
-										<p class="subtitle">{author1} - {movie1}</p>
+										<p class="title darkMode_text">{quote1}</p>
+										<p class="subtitle darkMode_text">{author1} - {movie1}</p>
 									</article>
 									<article class="tile is-child notification is-warning">
-										<p class="title">{quote2}</p>
-										<p class="subtitle">{author2} - {movie2}</p>
+										<p class="title darkMode_text">{quote2}</p>
+										<p class="subtitle darkMode_text">{author2} - {movie2}</p>
 									</article>
 								</div>
 							</div>

@@ -92,8 +92,8 @@ class Projects extends Component {
 			<section>
 				<section class='hero is-link'>
 					<div class='hero-body'>
-						<h1 class='title'>{title}</h1>
-						<h2 class='subtitle'>{subTitle}</h2>
+						<h1 class='title darkMode_text'>{title}</h1>
+						<h2 class='subtitle darkMode_text'>{subTitle}</h2>
 					</div>
 				</section>
 
@@ -120,8 +120,8 @@ class Projects extends Component {
 											(project) =>
 												!project.hide && (
 													<article class={'tile is-child notification ' + project.style}>
-														<p class='title'>{project.header}</p>
-														<p class='subtitle'>{project.summary}</p>
+														<p class='title darkMode_text'>{project.header}</p>
+														<p class='subtitle darkMode_text'>{project.summary}</p>
 														<p class='content'>{project.content}</p>
 													</article>
 												)

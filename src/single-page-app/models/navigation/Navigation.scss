@@ -1,4 +1,4 @@
-@import '../../shared';
+@import '../../../shared';
 
 .navigation {
     padding: 0 10px;
@@ -21,4 +21,8 @@
 
 .image {
     margin: auto;
+}
+
+.mini-buttons {
+    margin-right: 5px;
 }

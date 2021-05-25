@@ -1,25 +1,22 @@
-@use '../../shared.scss';
-$primary_back_color: #181a1b;
-$primary_text_color: #b9b3aa;
+@import '../../shared';
 
-$secondary_back_color: #151718;
-$secondary_text_color: #b9b3aa;
-
-$hover_back_color: #363636;
-$hover_text_color: #f5f5f5;
-
-$highlight_back_color: #272727;
-
-html {
+.darkMode_html {
 	background-color: $primary_back_color;
-	color: $primary_text_color;
 }
 
-body {
-	color: $primary_text_color;
+.lightMode_html {
+	background-color: $invert_primary_back_color;
 }
 
-.menu-list a, .menu-label, .title, .subtitle, .card {
+.darkMode_text {
+	color: $primary_text_color
+}
+
+.lightMode_text {
+	background-color: $invert_primary_text_color;
+}
+
+.menu-list a, .title, .subtitle, .card, .footer {
 	color: $primary_text_color;
 }
 

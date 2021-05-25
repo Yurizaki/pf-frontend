@@ -73,6 +73,7 @@ class Bio extends Component {
 			let image1 = '';
 			let labels = '';
 			let data = '';
+			let bioData = [];
 
 			if (this.props.headerData) {
 				let headerData = this.props.headerData;
@@ -92,50 +93,13 @@ class Bio extends Component {
 				image1 = this.props.bioData[0].image1.url;
 				labels = JSON.parse(this.props.bioData[0].labels);
 				data = JSON.parse(this.props.bioData[0].data);
+				bioData = this.props.bioData[0];
 			}
-
-			// if(this.state) {
-			// 	console.log('state')
-			// 	if(!this.state.charted) {
-			// 		console.log('charted')
-
-			// 		var ctx = document.getElementById('myChart').getContext('2d');
-			// 		var myChart = new Chart(ctx, {
-			// 			type: 'radar',
-			// 			data: {
-			// 				labels: labels,
-			// 				datasets: [{
-			// 					label: 'My Second Dataset',
-			// 					data: data,
-			// 					fill: true,
-			// 					backgroundColor: 'rgba(54, 162, 235, 0.2)',
-			// 					borderColor: 'rgb(54, 162, 235)',
-			// 					pointBackgroundColor: 'rgb(54, 162, 235)',
-			// 					pointBorderColor: '#fff',
-			// 					pointHoverBackgroundColor: '#fff',
-			// 					pointHoverBorderColor: 'rgb(54, 162, 235)'
-			// 				}]
-			// 			},
-			// 			options: {
-			// 				scale: {
-			// 					ticks: {
-			// 						display: false,
-			// 						maxTicksLimit: 3
-			// 					}
-			// 				}
-			// 			}
-			// 		});
-
-			// 		this.setState({
-			// 			charted: true
-			// 		})
-			// 	}
-			// }
 
 
 			this.setState({
 				headerData: this.props.headerData,
-				bioData: this.props.bioData[0],
+				bioData: bioData,
 				title: title,
 				subTitle: subTitle,
 				para1: para1,
@@ -177,8 +141,8 @@ class Bio extends Component {
 			<section>
 				<section class="hero is-link">
 					<div class="hero-body">
-						<h1 class="title">{title}</h1>
-						<h2 class="subtitle">{subTitle}</h2>
+						<h1 class="title darkMode_text">{title}</h1>
+						<h2 class="subtitle darkMode_text">{subTitle}</h2>
 					</div>
 				</section>
 

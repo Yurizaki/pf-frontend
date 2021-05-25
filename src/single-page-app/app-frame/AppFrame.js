@@ -29,6 +29,7 @@ class AppFrame extends Component {
 			fetch(url, { method: method, headers: headers })
 				.then((response) => response.json())
 				.then((json) => {
+					console.log(json.data)
 
 					let footerData = '';
 					let projectData = [];

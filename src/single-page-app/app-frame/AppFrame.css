@@ -1,14 +1,20 @@
-@use '../../shared.scss';
-html {
+.darkMode_html {
   background-color: #181a1b;
+}
+
+.lightMode_html {
+  background-color: #c7d7df;
+}
+
+.darkMode_text {
   color: #b9b3aa;
 }
 
-body {
-  color: #b9b3aa;
+.lightMode_text {
+  background-color: #b9b3aa;
 }
 
-.menu-list a, .menu-label, .title, .subtitle, .card {
+.menu-list a, .title, .subtitle, .card, .footer {
   color: #b9b3aa;
 }
 
