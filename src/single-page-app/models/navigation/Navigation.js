@@ -6,6 +6,7 @@ import { faMoon, faSun, faLanguage } from "@fortawesome/free-solid-svg-icons";
 import Contact from "../../pages/contact/contact";
 import Bio from "../../pages/bio/bio";
 import Projects from "../../pages/projects/Projects";
+import Blog from "../../pages/blog/Blog";
 
 import "./Navigation.css";
 
@@ -39,23 +40,45 @@ class Navigation extends Component {
 			if (this.state) {
 				console.log(this.state.darkMode);
 
-				let html = document.getElementsByTagName("html")[0];
-				if (html.classList[0] === 'darkMode_html') {
-					html.classList = 'lightMode_html';
-					await this.setState({
-						darkMode: false
-					});
+				let mode = this.state.darkMode ? 'darkModeComponent' : 'lightModeComponent';
+				let modeSecondary = this.state.darkMode ? 'darkModeSecondary' : 'lightModeSecondary';
+
+				let colouredComponents = document.getElementsByClassName(mode);
+				let colouredComponentsSecondary = document.getElementsByClassName(modeSecondary);
+
+				console.log(colouredComponents);
+				this.parseHtml(colouredComponents);
+
+				if(this.state.darkMode) {
+					for(let i = 0; colouredComponents[i];) {
+						colouredComponents[i].classList.replace('darkModeComponent', 'lightModeComponent');
+					}
+
+					for(let i = 0; colouredComponentsSecondary[i];) {
+						colouredComponentsSecondary[i].classList.replace('darkModeSecondary', 'lightModeSecondary');
+					}
 				}
 				else {
-					html.classList = 'darkMode_html';
-					await this.setState({
-						darkMode: true
-					});
+					for(let i = 0; colouredComponents[i];) {
+						colouredComponents[i].classList.replace('lightModeComponent', 'darkModeComponent');
+					}
+
+					for(let i = 0; colouredComponentsSecondary[i];) {
+						colouredComponentsSecondary[i].classList.replace('lightModeSecondary', 'darkModeSecondary');
+					}
 				}
-				console.log(this.state.darkMode);
-				console.log(html.classList);
+
+				await this.setState({
+					darkMode: !this.state.darkMode
+				});
 			}
 		}
+	}
+
+	parseHtml(...cmps) {
+		cmps.forEach(cmp => {
+			console.log(cmp);
+		})
 	}
 
 	render() {
@@ -73,7 +96,7 @@ class Navigation extends Component {
 		}
 
 		return (
-			<section className="box">
+			<section className="box darkModeComponent">
 				<div className="columns navigation">
 					<div className="column is-one-fifth-tablet">
 						<div className="columns">
@@ -84,6 +107,7 @@ class Navigation extends Component {
 											<button
 												className="button is-dark mini-buttons"
 												onClick={this.changeStyle}
+												disabled
 											>
 												<span class="icon-text has-text-warning">
 													<FontAwesomeIcon
@@ -96,6 +120,7 @@ class Navigation extends Component {
 											<button
 												className="button is-dark mini-buttons"
 												onClick={this.changeStyle}
+												disabled
 											>
 												<span class="icon-text has-text-warning">
 													<FontAwesomeIcon
@@ -104,7 +129,10 @@ class Navigation extends Component {
 												</span>
 											</button>
 										)}
-										<button className="button is-dark mini-buttons">
+										<button
+											className="button is-dark mini-buttons"
+											disabled
+										>
 											<span class="icon-text has-text-warning">
 												<FontAwesomeIcon
 													icon={faLanguage}
@@ -170,6 +198,7 @@ class Navigation extends Component {
 						/>
 
 						<Route exact path="/contact" component={Contact} />
+						<Route exact path="/blog" component={Blog} />
 					</div>
 				</div>
 			</section>

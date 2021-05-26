@@ -36,6 +36,7 @@ class AppFrame extends Component {
 					let projectTags = [];
 					let headerData = [];
 					let bioData = [];
+					let searchedTags = [];
 
 					for(let i = 0; i < json.data.length; i++) {
 						let content = json.data[i];
@@ -48,8 +49,10 @@ class AppFrame extends Component {
 							projectData.push(content.attributes.fields);
 							content.attributes.fields.hide = false;
 
-							if(!projectTags.includes(content.attributes.fields.tag)) {
+							console.log(content.attributes.fields.tag);
+							if(!searchedTags.includes(content.attributes.fields.tag)) {
 								projectTags.push({'displayName': content.attributes.fields.tag, 'displayStyle': content.attributes.fields.style});
+								searchedTags.push(content.attributes.fields.tag)
 							}
 						}
 
@@ -87,7 +90,7 @@ class AppFrame extends Component {
 					</div>
 				</div>
 
-				<footer className="footer page-footer">
+				<footer className="footer page-footer darkModeSecondary">
 					<div className="content has-text-centered">
 						<Footer footerData={footerData}></Footer>
 					</div>

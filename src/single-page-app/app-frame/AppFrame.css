@@ -1,9 +1,17 @@
-.darkMode_html {
+.darkModeComponent {
   background-color: #181a1b;
 }
 
-.lightMode_html {
-  background-color: #c7d7df;
+.lightModeComponent {
+  background-color: #dbdbdb;
+}
+
+.darkModeSecondary {
+  background-color: #151718;
+}
+
+.lightModeSecondary {
+  background-color: #dcdcdc;
 }
 
 .darkMode_text {
@@ -11,7 +19,7 @@
 }
 
 .lightMode_text {
-  background-color: #b9b3aa;
+  background-color: #181a1b;
 }
 
 .menu-list a, .title, .subtitle, .card, .footer {
@@ -23,7 +31,7 @@
   color: #f5f5f5;
 }
 
-.footer, .card {
+.card {
   background-color: #151718;
 }
 
@@ -37,15 +45,9 @@
 
 .make-footer-sticky {
   min-height: calc(100vh - 168px);
+  margin-right: 0;
 }
 
 .media-content {
   overflow: hidden;
-}
-
-@media (min-width: 1440px) {
-  html {
-    overflow: hidden;
-    /* Hide scrollbars */
-  }
 }

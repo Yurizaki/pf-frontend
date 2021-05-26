@@ -97,7 +97,7 @@ class Projects extends Component {
 					</div>
 				</section>
 
-				<div className='box'>
+				<div className='box darkModeComponent'>
 					<div class='buttons has-addons is-centered'>
 						<button class='button is-info' onClick={this.onSelect}>
 							{ALL_PROJECTS}
@@ -123,6 +123,7 @@ class Projects extends Component {
 														<p class='title darkMode_text'>{project.header}</p>
 														<p class='subtitle darkMode_text'>{project.summary}</p>
 														<p class='content'>{project.content}</p>
+														<p class='content'>{project.linkpretext} <a href={project.link}>{project.linktext}</a></p>
 													</article>
 												)
 										)}

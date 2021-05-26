@@ -1,11 +1,29 @@
 @import '../../shared';
 
-.darkMode_html {
+.darkModeComponent {
 	background-color: $primary_back_color;
 }
 
-.lightMode_html {
+.lightModeComponent {
 	background-color: $invert_primary_back_color;
+}
+
+.darkModeSecondary {
+	background-color: $secondary_back_color;
+}
+
+.lightModeSecondary {
+	background-color: $invert_secondary_back_color;
+
+}
+
+.darkMode_component {
+}
+
+.lightMode_html {
+}
+
+.lightMode_component {
 }
 
 .darkMode_text {
@@ -25,7 +43,7 @@
 	color: $hover_text_color;
 }
 
-.footer, .card {
+.card {
 	background-color: $secondary_back_color;
 }
 
@@ -39,15 +57,9 @@
 
 .make-footer-sticky {
 	min-height: calc(100vh - 168px);
+	margin-right: 0;
 }
 
 .media-content {
 	overflow: hidden;
-}
-
-$breakpoint-tablet: 1440px;
-@media (min-width: $breakpoint-tablet) {
-	html {
-		overflow: hidden; /* Hide scrollbars */
-	}
 }
