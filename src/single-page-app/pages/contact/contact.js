@@ -1,18 +1,13 @@
-import { getDefaultNormalizer } from "@testing-library/dom";
 import React, { Component } from "react";
 
 const title = "Contact Details";
-
-const profile_pic =
-	"https://media-exp1.licdn.com/dms/image/C4D03AQG6gMpnF654Og/profile-displayphoto-shrink_200_200/0/1611170985373?e=1626912000&v=beta&t=Kg3ecgbQDRq6FBF2WUgCLEne7JCrN5BvgfrB_ar74to";
-const name = "Alex Holmes";
 const github = "https://github.com/Yurizaki";
 const link = "https://www.linkedin.com/in/alex-holmes-296435128/";
 
 const withMailToEmail = 'mailto:alxh.contact@gmail.com';
 const email = 'alxh.contact@gmail.com';
 
-const lastUpdated = '19 May 2021';
+const lastUpdated = '27 May 2021';
 
 class Contact extends Component {
 	render() {
