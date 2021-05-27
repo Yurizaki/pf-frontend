@@ -13,7 +13,7 @@ class Blog extends Component {
 				</section>
 
                 <div className='box darkModeComponent'>
-                    <p className='subtitle is-5'>Check back later...</p>
+                    <p className='subtitle is-5'>Check back later... :)</p>
                 </div>
             </section>
         );

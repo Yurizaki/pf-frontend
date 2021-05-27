@@ -98,7 +98,7 @@ class Navigation extends Component {
 		return (
 			<section className="box darkModeComponent">
 				<div className="columns navigation">
-					<div className="column is-one-fifth-tablet">
+					<div className="column is-one-fifth">
 						<div className="columns">
 							<div className="column">
 								<div className="columns">
@@ -173,7 +173,7 @@ class Navigation extends Component {
 							</div>
 						</div>
 					</div>
-					<div className="column">
+					<div className="column is-three-quarters-fullhd">
 						<Route
 							exact
 							path="/projects"

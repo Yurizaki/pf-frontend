@@ -66,6 +66,7 @@ class Bio extends Component {
 		let para3 = "";
 		let subheading1 = "";
 		let image1 = "";
+		let data = "";
 
 		if (this.state) {
 			if (this.state.title && this.state.subTitle) {
@@ -77,7 +78,10 @@ class Bio extends Component {
 				if (this.state.bioData.para1 && this.state.bioData.image1) {
 					para1 = this.state.para1;
 					image1 = this.state.bioData.image1.url;
-					// subheading1 = this.state.bioData.subheading1;
+					subheading1 = this.state.bioData.subheading1;
+					data = JSON.parse(this.state.bioData.data);
+
+					console.log(data);
 				}
 			}
 		}
@@ -102,78 +106,59 @@ class Bio extends Component {
 							<p>{para1}</p>
 						</div>
 					</div>
-					<div className="columns">
-						<p>{subheading1}</p>
-					</div>
-					<div className="columns">
-						<p>{para2}</p>
-					</div>
-					<div className="columns">
-						<p>{para3}</p>
-					</div>
 				</div>
 
 				<div className="box darkModeSecondary">
+					<p className='title is-3 has-text-centered'>{subheading1}</p>
 					<div class="timeline is-centered">
 						<header class="timeline-header">
-							<span class="tag is-medium is-primary">Present</span>
+							<span class="tag is-medium is-primary">{data.timelineheader}</span>
 						</header>
 						<div class="timeline-item">
-							<div class="timeline-marker"></div>
-							<div class="timeline-content">
-								<p class="heading">Jan 2021</p>
-								<p>Software Feature Team Lead - Salesforce Project </p>
-							</div>
 						</div>
-						<div class="timeline-item">
-							<div class="timeline-marker is-image is-32x32">
-								<img src="https://bulma.io/images/placeholders/32x32.png" />
-							</div>
-							<div class="timeline-content">
-								<p class="heading">October 2020</p>
-								<p>Full stack developer - Salesforce Project</p>
-							</div>
-						</div>
-						<div class="timeline-item">
-							<div class="timeline-marker"></div>
-							<div class="timeline-content">
-								<p class="heading">June 2017</p>
-								<p>Solutions Architect - IOS & Android Mobile Application</p>
-							</div>
-						</div>
-						<header class="timeline-header">
-							<span class="tag is-info">Started at Barclays UK</span>
-						</header>
-						<div class="timeline-item">
-							<div class="timeline-marker is-icon">
-								<i class="fa fa-flag"></i>
-							</div>
-							<div class="timeline-content">
-								<p class="heading">September 2016</p>
-								<p>Left DAI</p>
-							</div>
-						</div>
-						<div class="timeline-item">
-							<div class="timeline-marker"></div>
-							<div class="timeline-content">
-								<p class="heading">October 2016</p>
-								<p>Developer - Java + Spring Application</p>
-							</div>
-						</div>
-						<div class="timeline-item">
-							<div class="timeline-marker"></div>
-							<div class="timeline-content">
-								<p class="heading">June 2016</p>
-								<p>First Line Application Support</p>
-							</div>
-						</div>
-						<header class="timeline-header">
-							<span class="tag is-danger">Started at DAI</span>
-						</header>
+
+						{data &&
+							data.sets.length > 0 &&
+								data.sets.map(
+									(set) =>
+										<>
+											{ set.timelineend &&
+												<>
+													<header class="timeline-header">
+														<span class="tag is-danger">{set.timelineend}</span>
+													</header>
+													<div class="timeline-item">
+													</div>
+												</>
+											}
+											{set.positions.map(
+												(position) =>
+													<>
+														<div className='timeline-item'>
+															<div class="timeline-marker"></div>
+															<div class="timeline-content">
+																<p class="heading">{position.date}</p>
+																<p>{position.role}</p>
+																<div className='content is-small'>
+																	<p className='minor-text'>{position.content}</p>
+																	<p className='has-text-grey'>{position.skills}</p>
+																</div>
+															</div>
+														</div>
+													</>
+											)}
+											<header class="timeline-header">
+												<span class="tag is-info">{set.timelineheader}</span>
+											</header>
+											<div class="timeline-item">
+											</div>
+										</>
+								)
+						}
 						<div class="timeline-item">
 						</div>
 						<div class="timeline-header">
-							<span class="tag is-medium is-primary">Start</span>
+							<span class="tag is-medium is-primary">{data.timelinestart}</span>
 						</div>
 					</div>
 				</div>

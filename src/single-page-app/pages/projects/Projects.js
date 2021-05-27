@@ -1,7 +1,7 @@
-import { React, Component } from 'react';
+import { React, Component } from "react";
 
-const ALL_PROJECTS = 'All Projects';
-const PAGE_ID = 'project_header';
+const ALL_PROJECTS = "All Projects";
+const PAGE_ID = "project_header";
 
 class Projects extends Component {
 	constructor(props) {
@@ -43,8 +43,8 @@ class Projects extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.props !== prevProps) {
-			let title = '';
-			let subTitle = '';
+			let title = "";
+			let subTitle = "";
 
 			if (this.props.headerData) {
 				let headerData = this.props.headerData;
@@ -72,8 +72,8 @@ class Projects extends Component {
 		let projectData = [];
 		let projectTags = [];
 
-		let title = '';
-		let subTitle = '';
+		let title = "";
+		let subTitle = "";
 
 		if (this.state) {
 			if (this.state.projectData) {
@@ -88,42 +88,72 @@ class Projects extends Component {
 			}
 		}
 
+		console.log(projectTags);
 		return (
 			<section>
-				<section class='hero is-link'>
-					<div class='hero-body'>
-						<h1 class='title darkMode_text'>{title}</h1>
-						<h2 class='subtitle darkMode_text'>{subTitle}</h2>
+				<section class="hero is-link">
+					<div class="hero-body">
+						<h1 class="title darkMode_text">{title}</h1>
+						<h2 class="subtitle darkMode_text">{subTitle}</h2>
 					</div>
 				</section>
 
-				<div className='box darkModeComponent'>
-					<div class='buttons has-addons is-centered'>
-						<button class='button is-info' onClick={this.onSelect}>
+				<div className="box darkModeComponent">
+					<div class="buttons has-addons is-centered">
+						<button class="button is-info" onClick={this.onSelect}>
 							{ALL_PROJECTS}
 						</button>
 						{projectTags.length > 0 &&
-							projectTags.map(
-								(tag) => (
-								<button class={'button ' + tag.displayStyle} onClick={this.onSelect}>
-									{tag.displayName}
-								</button>
-							))
-						}
+							projectTags.map((tag) => (
+								<>
+									{tag.displayName && (
+										<button
+											class={"button " + tag.displayStyle}
+											onClick={this.onSelect}
+										>
+											{tag.displayName}
+										</button>
+									)}
+								</>
+							))}
 					</div>
-					<div class='tile is-ancestor'>
-						<div class='tile is-vertical is-12'>
-							<div class='tile'>
-								<div class='tile is-parent is-vertical'>
+					<div class="tile is-ancestor">
+						<div class="tile is-vertical is-12">
+							<div class="tile">
+								<div class="tile is-parent is-vertical">
 									{projectData.length > 0 &&
 										projectData.map(
 											(project) =>
 												!project.hide && (
-													<article class={'tile is-child notification ' + project.style}>
-														<p class='title darkMode_text'>{project.header}</p>
-														<p class='subtitle darkMode_text'>{project.summary}</p>
-														<p class='content'>{project.content}</p>
-														<p class='content'>{project.linkpretext} <a href={project.link}>{project.linktext}</a></p>
+													<article
+														class={
+															"tile is-child notification " +
+															project.style
+														}
+													>
+														<p class="title darkMode_text">
+															{project.header}
+														</p>
+														<p class="subtitle darkMode_text">
+															{project.summary}
+														</p>
+														<p class="content">
+															{project.content}
+														</p>
+														<p class="content">
+															{
+																project.linkpretext
+															}{" "}
+															<a
+																href={
+																	project.link
+																}
+															>
+																{
+																	project.linktext
+																}
+															</a>
+														</p>
 													</article>
 												)
 										)}
