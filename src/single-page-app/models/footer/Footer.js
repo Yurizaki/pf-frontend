@@ -3,23 +3,25 @@ import { React, Component } from 'react';
 class Footer extends Component {
     componentDidUpdate(prevProps, prevState) {
         if (this.props !== prevProps) {
-            this.setState({
-                line1: this.props.footerData.line1,
-                link1: this.props.footerData.link1,
-                linktext1: this.props.footerData.linktext1,
+            if(this.props.footerData) {
+                this.setState({
+                    line1: this.props.footerData.line1,
+                    link1: this.props.footerData.link1,
+                    linktext1: this.props.footerData.linktext1,
 
-                line2: this.props.footerData.line2,
-                link2: this.props.footerData.link2,
-                linktext2: this.props.footerData.linktext2,
+                    line2: this.props.footerData.line2,
+                    link2: this.props.footerData.link2,
+                    linktext2: this.props.footerData.linktext2,
 
-                line3: this.props.footerData.line3,
-                link3: this.props.footerData.link3,
-                linktext3: this.props.footerData.linktext3,
-                
-                line4: this.props.footerData.line4,
-                link4: this.props.footerData.link4,
-                linktext4: this.props.footerData.linktext4,
-            });
+                    line3: this.props.footerData.line3,
+                    link3: this.props.footerData.link3,
+                    linktext3: this.props.footerData.linktext3,
+
+                    line4: this.props.footerData.line4,
+                    link4: this.props.footerData.link4,
+                    linktext4: this.props.footerData.linktext4,
+                });
+            }
         }
       }
 
