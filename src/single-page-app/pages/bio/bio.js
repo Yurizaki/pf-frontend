@@ -109,57 +109,78 @@ class Bio extends Component {
 				</div>
 
 				<div className="box darkModeSecondary">
-					<p className='title is-3 has-text-centered'>{subheading1}</p>
+					<p className="title is-3 has-text-centered">
+						{subheading1}
+					</p>
 					<div class="timeline is-centered">
-						<header class="timeline-header">
-							<span class="tag is-medium is-primary">{data.timelineheader}</span>
-						</header>
-						<div class="timeline-item">
-						</div>
+						{data && data.timelineheader && (
+							<>
+								<header class="timeline-header">
+									<span class="tag is-medium is-primary">
+										{data.timelineheader}
+									</span>
+								</header>
+								<div class="timeline-item"></div>
+							</>
+						)}
 
 						{data &&
 							data.sets.length > 0 &&
-								data.sets.map(
-									(set) =>
+							data.sets.map((set) => (
+								<>
+									{set.timelineend && (
 										<>
-											{ set.timelineend &&
-												<>
-													<header class="timeline-header">
-														<span class="tag is-danger">{set.timelineend}</span>
-													</header>
-													<div class="timeline-item">
-													</div>
-												</>
-											}
-											{set.positions.map(
-												(position) =>
-													<>
-														<div className='timeline-item'>
-															<div class="timeline-marker"></div>
-															<div class="timeline-content">
-																<p class="heading">{position.date}</p>
-																<p>{position.role}</p>
-																<div className='content is-small'>
-																	<p className='minor-text'>{position.content}</p>
-																	<p className='has-text-grey'>{position.skills}</p>
-																</div>
-															</div>
-														</div>
-													</>
-											)}
 											<header class="timeline-header">
-												<span class="tag is-info">{set.timelineheader}</span>
+												<span class="tag is-danger">
+													{set.timelineend}
+												</span>
 											</header>
-											<div class="timeline-item">
+											<div class="timeline-item"></div>
+										</>
+									)}
+									{set.positions.map((position) => (
+										<>
+											<div className="timeline-item">
+												<div class="timeline-marker"></div>
+												<div class="timeline-content">
+													<p class="heading">
+														{position.date}
+													</p>
+													<p>{position.role}</p>
+													<div className="content is-small">
+														<p className="minor-text">
+															{position.content}
+														</p>
+														<p className="has-text-grey">
+															{position.skills}
+														</p>
+													</div>
+												</div>
 											</div>
 										</>
-								)
-						}
-						<div class="timeline-item">
-						</div>
-						<div class="timeline-header">
-							<span class="tag is-medium is-primary">{data.timelinestart}</span>
-						</div>
+									))}
+									{set.timelineheader && (
+										<>
+											<header class="timeline-header">
+												<span class="tag is-info">
+													{set.timelineheader}
+												</span>
+											</header>
+											<div class="timeline-item"></div>
+										</>
+									)}
+								</>
+							))}
+
+						{data && data.timelinestart && (
+							<>
+								<header class="timeline-header">
+									<span class="tag is-medium is-primary">
+										{data.timelinestart}
+									</span>
+								</header>
+							</>
+						)}
 					</div>
 				</div>
 			</section>
