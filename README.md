@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+<h3 align="center">Personal Profile Website</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+  [![Inline docs](http://inch-ci.org/github/Yurizaki/pf-frontend.svg?branch=main)](http://inch-ci.org/github/Yurizaki/pf-frontend)
+  [![Maintainability](https://api.codeclimate.com/v1/badges/3b51042d4a9046f16811/maintainability)](https://codeclimate.com/github/Yurizaki/pf-frontend/maintainability)
+  [![Test Coverage](https://api.codeclimate.com/v1/badges/3b51042d4a9046f16811/test_coverage)](https://codeclimate.com/github/Yurizaki/pf-frontend/test_coverage)
+  ![Dependencies](https://david-dm.org/Yurizaki/pf-frontend.svg)
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+  [![GitHub Issues](https://img.shields.io/github/issues/yurizaki/pf-frontend.svg)](https://github.com/yurizaki/pf-frontend/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yurizaki/pf-frontend.svg)](https://github.com/yurizaki/pf-frontend/pulls)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">
+    A simple single page web app built on React, stylized with Bulma and hosted on Heroku.
+    <br>
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📝 Table of Contents
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Built Using](#built_using)
 
-### `npm test`
+## 🧐 About <a name = "about"></a>
+A small web application built from scratch using the 'create-react-app' NPM package runner. The web application is composed of mostly static pages with text and media content. The web application takes the form of a single page web app making use of the 'react-router' and the 'react-router-dom' packages. Basic concepts of React are implemented such as state, lifecycle, components, event handling, dynamic & conditional rendering. The web app is stylized using Bulma with some style and colours overridden to make the site defaulted to dark-mode. All content is hosted in an external CMS application which is fetched, stored and rendered. The web app is hosted on Heroku making use of auto deployment from the projects GitHub repository through Heroku's pipeline and deployed. The App's domain name is altered to point to this registered domain name.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🏁 Getting Started <a name = "getting_started"></a>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
-### `npm run build`
+### Installing & Starting up locally
+Simply clone the repository to your local system. In the project directory, you can run:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ⛏️ Built Using <a name = "built_using"></a>
+- [Heroku](https://heroku.com/) - Hosting Platform
+- [SASS](https://sass-lang.com/) - CSS Framework
+- [Bulma](https://www.mongodb.com/) - CSS Framework
+- [ElegentCMS](https://www.elegantcms.io/) - Content Management System
+- [React](https://reactjs.org/) - Web Framework
+- [NodeJs](https://nodejs.org/en/) - Server Environment
