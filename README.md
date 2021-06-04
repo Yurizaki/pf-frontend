@@ -40,8 +40,8 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Heroku](https://heroku.com/) - Hosting Platform
-- [SASS](https://sass-lang.com/) - CSS Framework
-- [Bulma](https://www.mongodb.com/) - CSS Framework
-- [ElegentCMS](https://www.elegantcms.io/) - Content Management System
+- [SASS](https://sass-lang.com/) - CSS Extension
+- [Bulma](https://bulma.io/) - CSS Framework
+- [ElegentCMS](https://www.elegantcms.io/) - Headless Content Management System
 - [React](https://reactjs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
